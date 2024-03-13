@@ -6,6 +6,5 @@ class ErrorCommand(CommandInterface):
         self.console = console
 
     def execute(self, command: str=None) -> None:
-        print(broken)
         self.console.print(f"I don't know what the command {command} is.")
         self.console.print()
