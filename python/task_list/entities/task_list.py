@@ -1,5 +1,5 @@
 from typing import Dict, List
-from task_list.project import Project
+from task_list.entities.project import Project
 
 class TaskList:
     def __init__(self) -> None:
@@ -15,7 +15,7 @@ class TaskList:
     def get_all_projects(self) -> List:
         return self.projects
     
-    # maybe this three should not be here?
+    # FIXME: maybe these following funtions should not be here?
     def add_project(self, prj_name):
         self.projects.append(Project(prj_name))
 
@@ -27,7 +27,8 @@ class TaskList:
         project.add_task(self.id, task_content)
         self.id += 1
     
-    def set_state(self, id, state: bool):
-        for prj in projects:
-            # tbd
-            pass
+    def set_state(self, id, is_done: bool):
+        for prj in self.projects:
+            for task in prj.get_all_tasks():
+                if task.get_id() == id:
+                    task.set_state(is_done)

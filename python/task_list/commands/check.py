@@ -1,5 +1,8 @@
 from .command_interface import CommandInterface
 
 class CheckCommand(CommandInterface):
+    def __init__(self, task_list) -> None:
+        self.task_list = task_list
+
     def execute(self, command: str=None) -> None:
-        self.set_done(id_string, True)
+        self.task_list.set_state(int(command), True)

@@ -1,7 +1,7 @@
 from typing import Dict, List
-from task_list.task import Task
-from task_list.project import Project
-from task_list.task_list import TaskList
+from task_list.entities.task import Task
+from task_list.entities.project import Project
+from task_list.entities.task_list import TaskList
 from task_list.console import Console
 from .commands import *
 

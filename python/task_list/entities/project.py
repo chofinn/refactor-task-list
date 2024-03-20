@@ -1,4 +1,4 @@
-from task_list.task import Task
+from task_list.entities.task import Task
 from typing import List
 
 class Project:
