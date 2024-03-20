@@ -1,5 +1,5 @@
 from typing import Dict, List
-from task_list.entities.project import Project
+from task_list_app.entities.project import Project
 
 class TaskList:
     def __init__(self) -> None:

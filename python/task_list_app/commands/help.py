@@ -1,5 +1,5 @@
 from .command_interface import CommandInterface
-from task_list.console import Console
+from task_list_app.console import Console
 
 class HelpCommand(CommandInterface):
     def __init__(self, console: Console) -> None:

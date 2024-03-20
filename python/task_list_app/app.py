@@ -1,5 +1,5 @@
-from task_list.console import Console
-from task_list.command import Command
+from task_list_app.console import Console
+from task_list_app.command import Command
 
 
 class TaskList:

@@ -1,8 +1,8 @@
 from typing import Dict
 from .command_interface import CommandInterface
-from task_list.entities.task import Task
-from task_list.console import Console
-from task_list.entities.project import Project
+from task_list_app.entities.task import Task
+from task_list_app.console import Console
+from task_list_app.entities.project import Project
 
 class AddCommand(CommandInterface):
     def __init__(self, console: Console, task_list) -> None:
