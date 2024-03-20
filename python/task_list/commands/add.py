@@ -2,12 +2,13 @@ from typing import Dict
 from .command_interface import CommandInterface
 from task_list.task import Task
 from task_list.console import Console
+from task_list.project import Project
 
 class AddCommand(CommandInterface):
-    def __init__(self, console: Console, tasks: Dict) -> None:
+    def __init__(self, console: Console, task_list) -> None:
         self.console = console
-        self.tasks = tasks
-        self.last_id: int = 0
+        self.task_list = task_list
+        
         
     def execute(self, command: str=None) -> None:
         sub_command_rest = command.split(" ", 1)
@@ -26,19 +27,10 @@ class AddCommand(CommandInterface):
             self.error_msg()
     
     def add_project(self, name: str) -> None:
-        self.tasks[name] = []
+        self.task_list.add_project(name)
 
     def add_task(self, project: str, description: str) -> None:
-        project_tasks = self.tasks.get(project)
-        if project_tasks is None:
-            self.console.print(f"Could not find a project with the name {project}.")
-            self.console.print()
-            return
-        project_tasks.append(Task(self.next_id(), description, False))
-
-    def next_id(self) -> int:
-        self.last_id += 1
-        return self.last_id
+        self.task_list.add_task(project, description)
 
     def error_msg(self):
         self.console.print("wrong argument, usage: add project <prj_name>, add task <prj_name> <task_name>")

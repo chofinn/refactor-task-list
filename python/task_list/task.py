@@ -1,10 +1,10 @@
 
 
 class Task:
-    def __init__(self, id_: int, description: str, done: bool) -> None:
+    def __init__(self, id_: int, description: str) -> None:
         self.id = id_
         self.description = description
-        self.done = done
+        self.done = False
 
     def set_done(self, id_string: str, done: bool) -> None:
         id_ = int(id_string)
