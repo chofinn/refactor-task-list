@@ -2,8 +2,8 @@ from typing import Dict, List
 from task_list_app.entities.task import Task
 from task_list_app.entities.project import Project
 from task_list_app.entities.task_list import TaskList
-from task_list_app.console import Console
-from .commands import *
+from task_list_app.io.console import Console
+from task_list_app.use_cases.commands import *
 
 
 class Command:

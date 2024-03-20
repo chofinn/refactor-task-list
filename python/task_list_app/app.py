@@ -1,8 +1,8 @@
-from task_list_app.console import Console
-from task_list_app.command import Command
+from task_list_app.io.console import Console
+from task_list_app.adapters.command import Command
 
 
-class TaskList:
+class TaskListApp:
     QUIT = "quit"
 
     def __init__(self, console: Console) -> None:
@@ -14,4 +14,4 @@ class TaskList:
             command = self.console.input("> ")
             if command == self.QUIT:
                 break
-            self.cmd.execute(command)    
+            self.cmd.execute(command)

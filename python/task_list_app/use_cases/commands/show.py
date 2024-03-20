@@ -1,6 +1,6 @@
 from typing import Dict
 from .command_interface import CommandInterface
-from task_list_app.console import Console
+from task_list_app.io.console import Console
 
 class ShowCommand(CommandInterface):
     def __init__(self, console: Console, task_list) -> None:

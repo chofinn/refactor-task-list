@@ -1,11 +1,10 @@
 from typing import Dict
 from .command_interface import CommandInterface
 from task_list_app.entities.task import Task
-from task_list_app.console import Console
 from task_list_app.entities.project import Project
 
 class AddCommand(CommandInterface):
-    def __init__(self, console: Console, task_list) -> None:
+    def __init__(self, console, task_list) -> None:
         self.console = console
         self.task_list = task_list
         
