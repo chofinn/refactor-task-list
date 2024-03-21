@@ -1,15 +1,14 @@
-from typing import Dict
 from .command_interface import CommandInterface
-from task_list_app.io.console import Console
 
 class ShowCommand(CommandInterface):
-    def __init__(self, console: Console, task_list) -> None:
-        self.console = console
+    def __init__(self, task_list) -> None:
         self.task_list = task_list
 
     def execute(self, command: str=None) -> None:
+        result = ""
         for project in self.task_list.get_all_projects():
-            self.console.print(project.get_name())
+            result += project.get_name() + "\n"
             for task in project.get_all_tasks():
-                self.console.print(f"  [{'x' if task.is_done() else ' '}] {task.id}: {task.description}")
-            self.console.print()
+                result += f"  [{'x' if task.is_done() else ' '}] {task.id}: {task.description}\n"
+            result += "\n"
+        return result

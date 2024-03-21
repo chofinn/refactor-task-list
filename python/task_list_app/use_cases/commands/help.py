@@ -5,10 +5,11 @@ class HelpCommand(CommandInterface):
         self.console = console
 
     def execute(self, command: str=None) -> None:
-        self.console.print("Commands:")
-        self.console.print("  show")
-        self.console.print("  add project <project name>")
-        self.console.print("  add task <project name> <task description>")
-        self.console.print("  check <task ID>")
-        self.console.print("  uncheck <task ID>")
-        self.console.print()
+        result = ""
+        result += "Commands:\n"
+        result += "  show\n"
+        result += "  add project <project name>\n"
+        result += "  add task <project name> <task description>\n"
+        result += "  check <task ID>\n"
+        result += "  uncheck <task ID>\n"
+        return result
