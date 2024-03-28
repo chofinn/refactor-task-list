@@ -1,9 +1,6 @@
 from .command_interface import CommandInterface
 
 class HelpCommand(CommandInterface):
-    def __init__(self, console) -> None:
-        self.console = console
-
     def execute(self, command: str=None) -> None:
         result = ""
         result += "Commands:\n"
